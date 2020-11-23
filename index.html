@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        #clock {
+            color: white;
+            font-size: 100px;
+            border: 5px solid white;
+            text-align: center;
+            border-radius: 80px;
+            width: 600px;
+            font-family: Futura;
+            box-shadow: 5px 5px 50px rgb(169, 165, 165);
+        }
+
+        .box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+
+        body {
+            height: 100vh;
+            background-image: url('https://www.hyponex.co.jp/plantia/wp/wp-content/uploads/2018/02/A-5.jpg');
+            backdrop-filter: brightness(90%) blur(3px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h1 id="clock"></h1>
+    </div>
+
+    <!-- JSはBODYのしめたぐの直前に入れる（全て読み込まれてから） -->
+    <script>
+        function gettime() {
+            const time = new Date() //Dateオブジェクトを作成して変数timeに格納
+            const now = time.toLocaleTimeString() //現在時刻を取得して変数nowに格納
+            document.getElementById("clock").innerHTML = now //html全体の中からclockというIDを持つ要素を取得しHTML要素に現在時刻を入れる
+        }
+        gettime()
+        setInterval(() => {
+            gettime()
+        }, 1000);
+
+
+        // console.log("りお")
+        // const rio = {
+        //     age: function () {
+        //         console.log("実行されました")
+        //     },
+        //     weight: "50kg"
+        // }
+
+        // rio.age();
+
+
+        // ↑コンソールを理解するには関数とオブジェクトをりかいする！→7割くらい理解した！2020/11/21
+        // 関数を実行：()をつける
+        // メソットまでクリアした！ぱちぱち
+        // documentはHTML全体のこと！
+    </script>
+</body>
+
+
+</html>
