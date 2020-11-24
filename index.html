@@ -12,13 +12,23 @@
 
         #clock {
             color: white;
-            font-size: 100px;
+            font-size: 60px;
             border: 5px solid white;
             text-align: center;
             border-radius: 80px;
-            width: 600px;
+            width: 340px;
             font-family: Futura;
-            box-shadow: 5px 5px 50px rgb(169, 165, 165);
+            box-shadow: 5px 5px 50px rgb(190, 189, 189);
+            text-shadow: 5px 5px 50px rgb(167, 163, 163)
+                /* ↑コピペして全てのプロパティを入れても支障はなし（みづらくはなるし意味のない処理が行われるので基本削る） */
+        }
+
+        @media(min-width:375px) {
+            #clock {
+                font-size: 100px;
+                width: 600px;
+                /* 変えたいプロパティのみ入れればOK */
+            }
         }
 
         .box {
